@@ -1,9 +1,6 @@
 
 import streamlit as st
 
-# =================================================================
-# 1. ATUR CSS KUSTOM (Untuk menghilangkan dekorasi bawaan jika ada)
-# =================================================================
 st.markdown("""
     <style>
     /* Menghilangkan padding bawaan blok markdown agar pas */
@@ -13,10 +10,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
 import streamlit as st
-
-# --- FRAME A: HERO SECTION (RATA KIRI AGAR STREAMLIT TIDAK BINGUNG) ---
 
 hero_html = """<div style="background-color: #2d5a27; padding: 25px; border-radius: 12px; color: white; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; font-family: sans-serif;">
 <div style="flex: 1; min-width: 120px; font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 8px;">🌿 TaniPintar</div>
@@ -28,8 +22,6 @@ hero_html = """<div style="background-color: #2d5a27; padding: 25px; border-radi
 </div>
 </div>"""
 st.markdown(hero_html, unsafe_allow_html=True)
-
-# --- FRAME B: SOLUSI PERTANIAN (Murni Flexbox HTML Rata Kiri) ---
 
 # Teks Subjudul Utama
 st.markdown("### **Satu sistem pintar untuk semua jenis pertanian.**")
@@ -123,8 +115,35 @@ with tab2:
                 st.success(f"Terima kasih {nama}! Data Anda berhasil dikirim. Tim Tani Pintar akan segera menghubungi Anda melalui {kontak}.")
             else:
                 st.warning("Mohon isi Nama dan Kontak Anda terlebih dahulu.")
+st.write("") # Jarak pembatas
+st.markdown("## **Didukung oleh Para Pakar Pertanian**")
 
-# --- FRAME D: Social Proof ---
+frame_d_html = """<div style="font-family: sans-serif; margin-top: 15px;">
+<div style="background-color: #f9f9f9; padding: 25px; border-radius: 12px; border-left: 5px solid #2d5a27; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+<p style="font-style: italic; color: #555; font-size: 1rem; line-height: 1.6; margin: 0 0 15px 0;">
+"Implementasi teknologi IoT dan otomatisasi pada kebun terbukti meningkatkan efisiensi penggunaan pupuk hingga 30% dan mempercepat masa panen secara stabil. Tani Pintar memberikan solusi nyata yang mudah dipahami oleh petani kita."
+</p>
+<b style="color: #2d5a27; font-size: 0.95rem;">Dr. Ir. Hermawan, M.Sc.</b><br>
+<span style="color: #777; font-size: 0.85rem;">Pakar Agronomi & Teknologi Pertanian</span>
+</div>
+
+<div style="background-color: #f4f6f4; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 40px;">
+<h4 style="margin: 0 0 10px 0; color: #2d5a27;">Pelajari Lebih Lanjut Sistem Tani Pintar</h4>
+<p style="margin: 0 0 15px 0; color: #666; font-size: 0.9rem;">Unduh brosur digital dan materi presentasi lengkap mengenai skema alat kami.</p>
+<a href="https://google.com" target="_blank" style="background-color: #2d5a27; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.85rem; display: inline-block;">📥 Download Brosur Alat (PDF)</a>
+</div>
+
+<div style="background-color: #2d5a27; color: white; padding: 20px; border-radius: 12px 12px 0 0; text-align: center; font-size: 0.85rem; line-height: 1.8;">
+<b style="font-size: 1rem;">PT Agrotech Digital Indonesia</b><br>
+📍 Jl. Kawasan Industri Pertanian Modern No. 45, Indonesia<br>
+📞 WhatsApp: +62 8xx-xxxx-xxxx | ✉️ Email: info@tanipintar.com<br>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 15px 0;">
+© 2026 Tani Pintar. Hak Cipta Dilindungi Undang-Undang.
+</div>
+</div>"""
+st.markdown(frame_d_html, unsafe_allow_html=True)
+
+
 st.markdown('<div class="frame frame-d">', unsafe_allow_html=True)
 st.header("Social Proof & Penutup")
 tabs = st.tabs(["Pendapat Pakar", "Slide Presentasi", "Hubungi Kami"])
