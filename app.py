@@ -1,6 +1,6 @@
 import streamlit as st
-    
-# CSS untuk latar belakang
+
+# CSS kustom untuk menghias kontainer
 st.markdown("""
     <style>
     .hero-container {
@@ -12,8 +12,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Membungkus dengan kontainer dan menerapkan CSS
+# --- FRAME A: Hero Section ---
 with st.container():
+    # Menghubungkan kelas CSS ke dalam kontainer via HTML pembungkus
     st.markdown('<div class="hero-container">', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 3, 1])
@@ -21,12 +22,11 @@ with st.container():
     with col1:
         st.write("Logo")
     with col2:
-        st.markdown("<h1 style='text-align: center; color: white;'>Ubah Kebun Anda Menjadi Cerdas</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: white;'>Ubah Kebun Anda Menjadi Cerdas. Lipat Gandakan Hasil Panen Tanpa Ribet.</h1>", unsafe_allow_html=True)
     with col3:
         st.button("Konsultasi Gratis (WA)")
         
     st.markdown('</div>', unsafe_allow_html=True)
-
 # --- FRAME B: Solusi Pertanian ---
 st.markdown('<div class="frame frame-b">', unsafe_allow_html=True)
 st.subheader("Satu sistem pintar untuk semua jenis pertanian.")
