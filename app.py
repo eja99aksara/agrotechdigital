@@ -14,7 +14,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# =================================================================
+import streamlit as st
+
 # --- FRAME A: HERO SECTION (Murni Flexbox HTML dieksekusi Python) ---
 
 hero_html = """
