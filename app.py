@@ -64,9 +64,11 @@ st.markdown(frame_b_html, unsafe_allow_html=True)
 
 
 # =================================================================
-# --- FRAME C: PRODUK & HARGA (Bungkus Latar Abu-abu Ringan)      ---
+# --- FRAME C: PRODUK & HARGA (Dengan Kontak Admin Terintegrasi)---
 # =================================================================
-# GANTI LINK YOUTUBE DI BAWAH INI JIKA SUDAH ADA VIDEO DEMO
+# SILAKAN GANTI NOMOR DI BAWAH INI DENGAN NOMOR WHATSAPP ADMIN ANDA
+# Format: Gunakan kode negara tanpa tanda +, contoh: 628123456789
+nomor_admin_wa = "https://wa.me/628xxxxxxxxxx"
 link_youtube_demo = "https://youtube.com" 
 
 # Trik kontainer abu-abu untuk memisahkan section harga
@@ -78,6 +80,7 @@ st.markdown("""<div style="background-color: #f8f9fa; padding: 25px; border-radi
 tab1, tab2 = st.tabs(["🛒 Beli Langsung", "💬 Tanya Dulu"])
 
 with tab1:
+    st.markdown("### **Daftar Paket Tani Pintar**")
     tabel_harga = """
 | Nama Paket | Target Pengguna | Fitur Utama |
 | :--- | :--- | :--- |
@@ -87,21 +90,36 @@ with tab1:
 """
     st.markdown(tabel_harga)
     st.write("") 
+    
+    # Tombol 1: Hubungi Admin untuk pesan
+    st.link_button("🟢 Hubungi Admin untuk Pemesanan (WA)", nomor_admin_wa, use_container_width=True)
+    # Tombol 2: Lihat demo
     st.link_button("📺 Lihat Demo Alat (YouTube)", link_youtube_demo, use_container_width=True)
 
 with tab2:
+    st.markdown("### **Formulir Konsultasi Gratis**")
+    st.write("Silakan isi data di bawah ini, tim ahli kami akan segera menghubungi Anda.")
+    
+    # Membuat formulir input interaktif
     with st.form(key="form_konsultasi"):
         nama = st.text_input("Nama Lengkap")
         kontak = st.text_input("Nomor WhatsApp / Email")
         luas_lahan = st.selectbox("Luas Lahan Pertanian", ["< 100 m² (Rumahan)", "100 - 1000 m²", "> 1000 m² (Skala Industri)"])
         pesan = st.text_area("Ceritakan kendala atau kebutuhan kebun Anda")
+        
         submit_button = st.form_submit_button(label="Kirim Pengajuan Konsultasi")
+        
         if submit_button:
             if nama and kontak:
                 st.success(f"Terima kasih {nama}! Data berhasil dikirim. Tim kami akan menghubungi Anda di {kontak}.")
             else:
                 st.warning("Mohon isi Nama dan Kontak Anda terlebih dahulu.")
-
+                
+    st.write("")
+    st.markdown("---")
+    # Alternatif kontak admin cepat di bawah form
+    st.markdown("<p style='text-align: center; color: #666;'>Atau ingin respon lebih cepat?</p>", unsafe_allow_html=True)
+    st.link_button("💬 Chat Admin Langsung via WhatsApp", nomor_admin_wa, use_container_width=True)
 
 # =================================================================
 # --- FRAME D: SOCIAL PROOF & PENUTUP                            ---
