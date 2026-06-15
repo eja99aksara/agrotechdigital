@@ -1,59 +1,66 @@
+
 import streamlit as st
 
 # =================================================================
-# 1. ATUR CSS KUSTOM (Mewarnai kontainer berdasarkan KEY)
+# 1. ATUR CSS KUSTOM (Untuk menghilangkan dekorasi bawaan jika ada)
 # =================================================================
 st.markdown("""
     <style>
-    /* Mencari container Streamlit yang memiliki key="hero" */
-    [data-testid="stElementContainer"]:has(div[id="hero"]) {
-        background-color: #2d5a27 !important;
-        padding: 35px !important;
-        border-radius: 12px !important;
-        color: white !important;
-        margin-bottom: 25px;
-    }
-    
-    /* Memastikan teks judul h1 di dalam container hero berwarna putih */
-    [data-testid="stElementContainer"]:has(div[id="hero"]) h1 {
-        color: white !important;
-        font-size: 2rem !important;
-        font-weight: bold !important;
-    }
-    
-    /* Membuat tombol di dalam hero mengikuti tema */
-    [data-testid="stElementContainer"]:has(div[id="hero"]) button {
-        background-color: #ffffff !important;
-        color: #2d5a27 !important;
-        border: none !important;
-        font-weight: bold !important;
+    /* Menghilangkan padding bawaan blok markdown agar pas */
+    .block-container {
+        padding-top: 2rem !important;
     }
     </style>
 """, unsafe_allow_html=True)
 
 
 # =================================================================
-# 2. STRUKTUR FRAME A: HERO SECTION (Murni Streamlit)
+# 2. STRUKTUR FRAME A: HERO SECTION (Murni Flexbox HTML)
 # =================================================================
-# Kita buat container murni Streamlit dan beri key="hero"
-with st.container(key="hero"):
-    # Trik jangkar kecil agar CSS di atas bisa mendeteksi kontainer ini
-    st.markdown('<div id="hero"></div>', unsafe_allow_html=True)
+
+# Semua elemen (Logo, Judul, Tombol) disatukan dalam satu blok HTML murni
+hero_html = """
+<div style="
+    background-color: #2d5a27; 
+    padding: 30px 40px; 
+    border-radius: 12px; 
+    color: white; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+">
+    <div style="flex: 1; min-width: 100px; font-size: 1.5rem; font-weight: bold;">
+        🥬 TaniPintar
+    </div>
     
-    # Membuat 3 kolom di dalam kontainer
-    col1, col2, col3 = st.columns([1, 3, 1])
+    <div style="flex: 3; min-width: 250px; text-align: center;">
+        <h1 style="color: white; margin: 0; font-size: 2.2rem; font-weight: 800; line-height: 1.2;">
+            Ubah Kebun Anda<br>Menjadi Cerdas
+        </h1>
+    </div>
     
-    with col1:
-        st.write("### **Logo**")
-        
-    with col2:
-        # Menggunakan heading standar Streamlit agar lebih stabil
-        st.markdown("<h1 style='text-align: center; margin: 0;'>Ubah Kebun Anda Menjadi Cerdas</h1>", unsafe_allow_html=True)
-        
-    with col3:
-        # Tombol bawaan Streamlit
-        st.button("Konsultasi Gratis (WA)", key="tombol_wa")
-    
+    <div style="flex: 1; min-width: 180px; text-align: right;">
+        <a href="https://wa.me/628xxxxxxxxxx" target="_blank" style="
+            background-color: white; 
+            color: #2d5a27; 
+            padding: 12px 20px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        ">
+            Konsultasi Gratis (WA)
+        </a>
+    </div>
+</div>
+"""
+
+# Jalankan HTML murni di Streamlit
+st.markdown(hero_html, unsafe_allow_html=True)    
 # --- FRAME B: Solusi Pertanian ---
 st.markdown('<div class="frame frame-b">', unsafe_allow_html=True)
 st.subheader("Satu sistem pintar untuk semua jenis pertanian.")
