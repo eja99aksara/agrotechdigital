@@ -117,10 +117,11 @@ with tab2:
             st.success(f"Terima kasih {nama}! Data berhasil dikirim.")
 
 # =================================================================
+# =================================================================
 # --- FRAME D: SOCIAL PROOF (Mengikuti Gaya Jernih Tanpa Kotak Buram) ---
 # =================================================================
 st.write("")
-st.markdown("<h3 style='font-size: 1.2rem; font-weight: bold; color: #333333; margin-bottom: 5px;'>Social Proof & Penutup.</h3>", unsafe_allow_html=True) 
+st.markdown("## **Social Proof & Penutup**")
 
 frame_d_html = f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('{bg_proof}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 40px 25px; border-radius: 12px; font-family: sans-serif; margin-bottom: 30px; text-align: center;">
     <p style="font-style: italic; color: #ffffff; font-size: 0.85rem; line-height: 1.6; margin: 0 0 15px 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); font-weight: 500;">
