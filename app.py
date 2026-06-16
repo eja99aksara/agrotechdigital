@@ -58,8 +58,7 @@ st.markdown(hero_html, unsafe_allow_html=True)
 # =================================================================
 # --- FRAME B: SOLUSI PERTANIAN (Menggunakan Gambar 2 & 3)
 # =================================================================
-st.markdown("## **Satu sistem pintar untuk semua jenis pertanian.**")
-
+st.markdown("<h3 style='font-size: 1.2rem; font-weight: bold; color: #333333; margin-bottom: 5px;'>Satu sistem pintar untuk semua jenis pertanian.</h3>", unsafe_allow_html=True)
 frame_b_html = f"""<div style="background-color: #f7f9f6; padding: 15px; border-radius: 12px; margin-bottom: 40px; font-family: sans-serif;">
     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
         <div style="flex: 1; min-width: 280px; background-color: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 12px; border-top: 5px solid #2d5a27; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
