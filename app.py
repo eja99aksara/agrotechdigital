@@ -88,7 +88,7 @@ st.markdown(frame_b_html, unsafe_allow_html=True)
 # --- FRAME C: PRODUK & HARGA
 # =================================================================
 st.markdown(f"""<div style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{bg_paket}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 40px 25px; border-radius: 12px; margin-bottom: 15px; font-family: sans-serif;">
-<h2 style="margin-top: 0; color: white; font-weight: bold; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); border: none; background: none; padding: 0;">Pilih Paket Sesuai Kebutuhan Anda</h2>
+<h2 style="margin-top: 0; color: white; font-weight: bold; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); border: none; background: none; padding: 0;">Pilih Paket Sesuai Kebutuhan Anda</h3>
 <p style="color: #fff; margin-bottom: 0; font-weight: 500; text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">Mulai digitalisasi kebun Anda hari ini demi hasil panen yang berlipat ganda.</p>
 </div>""", unsafe_allow_html=True)
 
